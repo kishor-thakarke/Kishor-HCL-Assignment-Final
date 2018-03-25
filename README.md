@@ -9,46 +9,61 @@ from one account to another in a thread-safe manner.It allows to access these fe
    - Description : Service to create new account. If given account doesn't exist, it creates new account else it returns with 'account
    already exists' error.
    - Request     :
+      ```
       POST localhost:18080/v1/accounts
       {
 	      "accountId":"123",
 	      "balance":1000
       }
+      ```
    - Response    :
+      ```
       HTTP Status- 201 Created
+      ```
 
 **2. View existing account**
    - Endpoint    : /v1/accounts/{accountId}
    - Description : Service to view existing account. {accountId} is the ID of account to be viewed.
    - Request     :
+      ```
       GET localhost:18080/v1/accounts/123
-    - Response    :
-      {
+      ```
+     - Response    :
+   
+    {
 	      "accountId":"123",
 	      "balance":1000
       }
+   
 
 **3. Tranfer money from one account to another**
    - Endpoint    : /v1/accounts/transfer
    - Description : Service to tranfer money from one account to another. If valid details are provided in request, it returns with
    success message else it returns with error message.
    - Request     :
+      ```   
       PUT localhost:18080/v1/accounts/transfer
       {
       	"accountFromId":"456",
 	      "accountToId":"123",
 	      "amountToTransfer":500
       }
+      ```      
    - Response if request is valid:
+   ```
       HTTP 200
       {
         "message":"Funds has been transferred successfully"
       }
+   ```
+     
     - Response if request is invalid:
+    ```
       HTTP 400
       {
          "error": "Account with number '456' does not exist. Please provide valid account number."
       }
+      ```
    
    
    **Below are some examples of invalid requests for /v1/accounts/transfer and their respective responses:**
