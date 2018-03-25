@@ -1,4 +1,4 @@
-# Kishor-HCL-Assignment-Final
+# Bank Account transactions assigment
 This project provides basic functionality of creating bank accounts of customers, viewing their account and transferring funds 
 from one account to another in a thread-safe manner.It allows to access these features through REST endpoints. 
 
