@@ -3,6 +3,7 @@ This project provides basic functionality of creating bank accounts of customers
 from one account to another in a thread-safe manner.It allows to access these features through REST endpoints. 
 
 **Below are the details of REST services:**
+
 **1. Create new account**
    - Endpoint    : /v1/accounts
    - Description : Service to create new account. If given account doesn't exist, it creates new account else it returns with 'account
@@ -51,7 +52,9 @@ from one account to another in a thread-safe manner.It allows to access these fe
    
    
    **Below are some examples of invalid requests for /v1/accounts/transfer and their respective responses:**
-   1. Invalid account
+   
+   **1. Invalid account**
+   
       PUT localhost:18080/v1/accounts/transfer
       {
         "accountFromId":"456",
@@ -65,7 +68,8 @@ from one account to another in a thread-safe manner.It allows to access these fe
       }
 
 
-   2. Invalid amount to transfer: amountToTransfer > availableBalance
+   **2. Invalid amount to transfer: amountToTransfer > availableBalance**
+   
       PUT localhost:18080/v1/accounts/transfer
       {
         "accountFromId":"456",
@@ -90,6 +94,7 @@ logging:
     
 
 **Below are the logs for one of the positive test:**
+
 **1. Create first account:**
 
 2018-03-25 14:56:41.326  INFO 17012 --- [io-18080-exec-1] c.d.a.challenge.web.AccountsController   : Creating account Account(accountId=123, balance=1000, lock=java.lang.Object@5a6f82ff)
