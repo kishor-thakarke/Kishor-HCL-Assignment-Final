@@ -32,7 +32,7 @@ Below are the details of REST services:
    - Description : Service to tranfer money from one account to another. If valid details are provided in request, it returns with
    success message else it returns with error message.
    - Request     :
-      POST localhost:18080/v1/accounts
+      PUT localhost:18080/v1/accounts/transfer
       {
       	"accountFromId":"456",
 	      "accountToId":"123",
