@@ -119,7 +119,7 @@ public class AccountsService {
 				  // Generate JSON response with transaction status details
 				  response =  new JSONObject();
 	         	  response.put(MESSAGE, "Funds has been transferred successfully");
-	         	  log.debug("Response: {}", response);
+	         	  log.info("Response: {}", response);
 	          }
 		  }
 	  }
@@ -152,6 +152,7 @@ public class AccountsService {
 	  
 	  BigDecimal amountToTransfer = transferRequest.getAmountToTransfer();
 	  BigDecimal accFromBalance = accFrom.getBalance();
+	  
 	  if(accFromBalance.compareTo(amountToTransfer) == -1){
 		  log.error("There is no sufficient balance to transfer.");
 		  throw new InsufficientBalanceException("You don't have sufficient balance.");

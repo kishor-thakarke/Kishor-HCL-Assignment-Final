@@ -93,7 +93,6 @@ public class AccountsControllerTest {
       .content("{\"accountId\":\"\",\"balance\":1000}")).andExpect(status().isBadRequest());
   }
 
-  @Ignore
   @Test
   public void getAccount() throws Exception {
     String uniqueAccountId = "Id-" + System.currentTimeMillis();
